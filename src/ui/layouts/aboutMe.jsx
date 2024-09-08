@@ -1,6 +1,7 @@
 import Judul from "../components/judul";
 import Text from "../components/text";
 import Sosmed from "../components/sosmed";
+import PropTypes from "prop-types";
 import { useContext } from "react";
 import { ThemeContext } from "../components/themeSwitcher";
 
@@ -8,37 +9,33 @@ function AboutMe() {
   const { isDarkMode } = useContext(ThemeContext);
 
   return (
-    <div className="flex flex-col justify-center items-center w-full h-full md:w-10/12 md:p-2 lg:w-8/12 xl:w-1/2 relative p-4 overflow-hidden">
+    <div className="flex flex-col justify-center items-center w-full h-full md:w-10/12 md:p-2 lg:w-8/12 xl:w-1/2 relative p-8 overflow-hidden">
       <div
-        className={`mockup-code p-6 md:p-2 flex flex-col overflow-hidden ${
-          isDarkMode ? "bg-[#2a323c] text-white" : "bg-[#E6EBF0] text-[#2c3137]"
+        className={`mockup-code py-8 px-4 flex flex-col overflow-hidden ${
+          isDarkMode
+            ? "bg-[#2a323c] text-[#E6EBF0]"
+            : "bg-[#E6EBF0] text-[#2c3137]"
         } w-full max-w-full`}
       >
         <pre data-prefix="$" className="flex items-center">
-          <Judul
-            className={`font-bold text-lg md:text-xl xl:text-2xl ${
-              isDarkMode ? "text-white" : "text-[#000]"
-            }`}
-          >
+          <Judul className={`font-semibold text-[2rem] md:text-[1.5rem]`}>
             Syahdan Firmansyah
           </Judul>
         </pre>
-        <pre data-prefix=">" className="flex">
-          <Text className="text-success text-sm overflow-wrap text-wrap">
-            Hallo, Saya Syahdan Firmansyah
-          </Text>
-        </pre>
-        <pre data-prefix=">" className="flex">
-          <Text className="text-inherit overflow-wrap text-wrap">
+        <Pre>
+          <Text className={"text-success"}>Hallo, Saya Syahdan Firmansyah</Text>
+        </Pre>
+        <Pre>
+          <Text>
             Mahasiswa Semester 5 Prodi{" "}
             <span className="text-orange-500 font-semibold">
               Bisnis Digital FEB UNPAD.
             </span>
           </Text>
-        </pre>
+        </Pre>
         <br />
-        <pre data-prefix=">" className="flex">
-          <Text className="text-inherit overflow-wrap  text-justify text-sm text-wrap">
+        <Pre>
+          <Text className="text-justify self-center">
             Saya memiliki minat mendalam di bidang pengembangan web, khususnya{" "}
             <span className="text-orange-500">frontend development</span>{" "}
             menggunakan{" "}
@@ -53,12 +50,11 @@ function AboutMe() {
             memanfaatkan teknologi modern dan praktik terbaik dalam pengembangan
             web.
           </Text>
-        </pre>
+        </Pre>
       </div>
+
       <div className="flex flex-col mt-6 items-center gap-2">
-        <Text className="text-inherit text-base md:text-center">
-          Find me on
-        </Text>
+        <Text className="text-inherit text-center">Find me on</Text>
         <div>
           <Sosmed />
         </div>
@@ -68,3 +64,14 @@ function AboutMe() {
 }
 
 export default AboutMe;
+
+function Pre({ children }) {
+  return (
+    <pre data-prefix=">" className="flex text-inherit text-[1rem] text-wrap">
+      {children}
+    </pre>
+  );
+}
+Pre.propTypes = {
+  children: PropTypes.node.isRequired,
+};

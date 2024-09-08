@@ -15,7 +15,7 @@ const pageVariants = {
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
 
   const toggleTheme = () => {

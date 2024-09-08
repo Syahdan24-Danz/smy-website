@@ -14,7 +14,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="relative flex md:flex-row justify-between items-center py-4 px-4 md:px-16 text-[1.2rem] font-semibold">
+    <nav className="navbar relative flex md:flex-row justify-between items-center py-4 px-4 md:px-16 text-[1.2rem] font-semibold">
       <Logo isDarkMode={isDarkMode} />
 
       {/* Hamburger Icon */}
@@ -32,7 +32,9 @@ function Navbar() {
       <div
         className={`${
           isMenuOpen ? "block" : "hidden"
-        } md:flex md:flex-row md:gap-8 md:w-auto md:static absolute top-16 right-0  bg-white md:bg-inherit p-4 md:p-0 z-10`}
+        } md:flex md:flex-row md:gap-8 md:w-auto md:static absolute top-16 right-0 rounded-xl  bg-[${
+          isDarkMode ? "#2a323c" : "#e6ebf0"
+        }] md:bg-inherit p-4 md:p-0 z-10`}
       >
         <NavMenu />
         <br />
