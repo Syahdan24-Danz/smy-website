@@ -18,7 +18,7 @@ function MainPage() {
       <Navbar />
 
       <motion.div
-        className="flex-grow flex justify-center items-center"
+        className="flex justify-center items-center w-full h-full"
         initial="initial"
         animate="animate"
         exit="exit"

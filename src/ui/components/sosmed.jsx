@@ -28,7 +28,7 @@ function Sosmed() {
   ];
 
   return (
-    <ul className="menu menu-horizontal flex gap-4 p-0">
+    <ul className="menu menu-horizontal flex text-center gap-4 p-0">
       {sosmed.map((sosmed) => (
         <li
           key={sosmed.name}

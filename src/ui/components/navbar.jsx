@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ThemeContext } from "./themeSwitcher";
 import LogoCoding from "./logoCoding";
 import Judul from "./judul";
@@ -7,12 +7,35 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   const { isDarkMode, toggleTheme } = useContext(ThemeContext);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleMenuToggle = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
 
   return (
-    <nav className="flex flex-row justify-between items-center py-4 px-16 text-[1.2rem] font-semibold">
+    <nav className="relative flex md:flex-row justify-between items-center py-4 px-4 md:px-16 text-[1.2rem] font-semibold">
       <Logo isDarkMode={isDarkMode} />
-      <div className="flex flex-row gap-8">
+
+      {/* Hamburger Icon */}
+      <div className="md:hidden flex items-center">
+        <button
+          className="text-3xl"
+          onClick={handleMenuToggle}
+          aria-label="Toggle Menu"
+        >
+          {isMenuOpen ? "✖️" : "☰"}
+        </button>
+      </div>
+
+      {/* Navigation Menu */}
+      <div
+        className={`${
+          isMenuOpen ? "block" : "hidden"
+        } md:flex md:flex-row md:gap-8 md:w-auto md:static absolute top-16 right-0  bg-white md:bg-inherit p-4 md:p-0 z-10`}
+      >
         <NavMenu />
+        <br />
         <ButtonDarkMode isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       </div>
     </nav>
@@ -48,7 +71,7 @@ function NavMenu() {
   ];
 
   return (
-    <ul className="flex flex-row gap-8">
+    <ul className="flex flex-col md:flex-row gap-8 md:gap-8">
       {menuList.map((item) => (
         <li key={item.name}>
           <Link to={item.link}>{item.name}</Link>

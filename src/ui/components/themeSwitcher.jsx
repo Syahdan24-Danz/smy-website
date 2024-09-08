@@ -31,8 +31,8 @@ export const ThemeProvider = ({ children }) => {
   return (
     <>
       {isLoading ? (
-        <div className="flex justify-center items-center h-[85vh]">
-          <div className="diff aspect-[16/9] relative overflow-hidden">
+        <div className="flex justify-center items-center min-h-screen ">
+          <div className="diff min-h-screen relative overflow-hidden">
             <motion.div
               className="diff-item-1 absolute inset-0 flex justify-center items-center"
               initial="hidden"
@@ -40,7 +40,7 @@ export const ThemeProvider = ({ children }) => {
               variants={pageVariants}
               transition={{ duration: 1 }}
             >
-              <div className="bg-primary text-primary-content grid place-content-center text-9xl font-black">
+              <div className="bg-primary text-primary-content grid place-content-center md:text-2xl xl:text-9xl  font-black">
                 SYAHDAN
               </div>
             </motion.div>
@@ -51,7 +51,7 @@ export const ThemeProvider = ({ children }) => {
               variants={pageVariants}
               transition={{ duration: 1, delay: 0.5 }}
             >
-              <div className="bg-base-200 grid place-content-center text-9xl font-black">
+              <div className="bg-base-200 grid place-content-center md:text-2xl xl:text-9xl font-black">
                 SYAHDAN
               </div>
             </motion.div>
@@ -61,7 +61,7 @@ export const ThemeProvider = ({ children }) => {
       ) : (
         <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
           <motion.div
-            className="container_main flex flex-col min-h-screen max-w-screen font-lexend text-[1.25rem] relative overflow-hidden"
+            className="container_main flex flex-col font-lexend  relative overflow-hidden"
             variants={themeVariants}
             animate={isDarkMode ? "dark" : "light"}
             transition={{ duration: 0.5 }}
