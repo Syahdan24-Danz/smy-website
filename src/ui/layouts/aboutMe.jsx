@@ -27,7 +27,9 @@ function AboutMe() {
           data-prefix=">"
           className={`flex md:text-sm lg:text-lg xl:text-xl`}
         >
-          <Text className="text-success">Hallo, Saya Syahdan Firmansyah</Text>
+          <Text className="text-success text-1rem">
+            Hallo, Saya Syahdan Firmansyah
+          </Text>
         </pre>
         <pre data-prefix=">" className="flex text-sm mb-4 md:text-base">
           <Text className="text-iherit">
@@ -38,7 +40,7 @@ function AboutMe() {
           </Text>
         </pre>
         <pre data-prefix=">" className="flex text-justify text-sm md:text-base">
-          <Text className="text-iherit text-wrap">
+          <Text className="text-iherit text-wrap break-words overflow-hidden">
             Saya memiliki minat mendalam di bidang pengembangan web, khususnya{" "}
             <span className="text-orange-500">frontend development</span>{" "}
             menggunakan{" "}

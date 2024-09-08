@@ -61,7 +61,7 @@ export const ThemeProvider = ({ children }) => {
       ) : (
         <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
           <motion.div
-            className="container_main flex flex-col font-lexend  relative overflow-hidden"
+            className="container_main flex flex-col font-lexend h-screen relative overflow-hidden"
             variants={themeVariants}
             animate={isDarkMode ? "dark" : "light"}
             transition={{ duration: 0.5 }}
