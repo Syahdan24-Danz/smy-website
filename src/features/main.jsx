@@ -10,15 +10,13 @@ const pageVariants = {
   exit: { opacity: 0, y: -50 },
 };
 
-// Variants for dark and light mode transitions
-
 function MainPage() {
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Navbar />
 
       <motion.div
-        className="flex justify-center items-center w-full h-full"
+        className="flex flex-col justify-center items-center w-full xl:h-[85vh]"
         initial="initial"
         animate="animate"
         exit="exit"
@@ -38,7 +36,7 @@ function MainPage() {
       >
         <Footer />
       </motion.div>
-    </>
+    </div>
   );
 }
 

@@ -1682,6 +1682,10 @@ html {
   height: 1.5rem;
 }
 
+.h-\[85vh\] {
+  height: 85vh;
+}
+
 .h-\[90vh\] {
   height: 90vh;
 }
@@ -1690,8 +1694,40 @@ html {
   height: 100%;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
+.h-\[120vh\] {
+  height: 120vh;
+}
+
+.h-\[150vh\] {
+  height: 150vh;
+}
+
+.h-\[200vh\] {
+  height: 200vh;
+}
+
+.h-auto {
+  height: auto;
+}
+
 .min-h-screen {
   min-height: 100vh;
+}
+
+.min-h-\[85vh\] {
+  min-height: 85vh;
+}
+
+.min-h-\[100vh\] {
+  min-height: 100vh;
+}
+
+.min-h-full {
+  min-height: 100%;
 }
 
 .w-12 {
@@ -1712,6 +1748,10 @@ html {
 
 .max-w-screen-lg {
   max-width: 1024px;
+}
+
+.flex-grow {
+  flex-grow: 1;
 }
 
 .cursor-pointer {
@@ -1768,6 +1808,10 @@ html {
 
 .text-wrap {
   text-wrap: wrap;
+}
+
+.break-words {
+  overflow-wrap: break-word;
 }
 
 .rounded-box {
@@ -1864,6 +1908,11 @@ html {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .font-black {
@@ -1963,10 +2012,6 @@ html {
     flex-direction: row;
   }
 
-  .md\:justify-center {
-    justify-content: center;
-  }
-
   .md\:gap-8 {
     gap: 2rem;
   }
@@ -2015,20 +2060,23 @@ html {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
+
+  .md\:text-\[0\.8rem\] {
+    font-size: 0.8rem;
+  }
 }
 
 @media (min-width: 1024px) {
   .lg\:w-8\/12 {
     width: 66.666667%;
   }
-
-  .lg\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
 }
 
 @media (min-width: 1280px) {
+  .xl\:h-\[85vh\] {
+    height: 85vh;
+  }
+
   .xl\:w-1\/2 {
     width: 50%;
   }
@@ -2041,10 +2089,5 @@ html {
   .xl\:text-9xl {
     font-size: 8rem;
     line-height: 1;
-  }
-
-  .xl\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
   }
 }
