@@ -8,11 +8,11 @@ function AboutMe() {
   const { isDarkMode } = useContext(ThemeContext);
 
   return (
-    <div className="flex flex-col justify-center items-center w-full h-full md:w-10/12 md:p-2 lg:w-8/12 xl:w-1/2 relative p-4 ">
+    <div className="flex flex-col justify-center items-center w-full h-full md:w-10/12 md:p-2 lg:w-8/12 xl:w-1/2 relative p-4 overflow-hidden">
       <div
-        className={`mockup-code p-6 md:p-8 flex flex-col ${
+        className={`mockup-code p-6 md:p-2 flex flex-col overflow-hidden ${
           isDarkMode ? "bg-[#2a323c] text-white" : "bg-[#E6EBF0] text-[#2c3137]"
-        } w-full max-w-screen-lg`}
+        } w-full max-w-full`}
       >
         <pre data-prefix="$" className="flex items-center">
           <Judul
@@ -23,13 +23,13 @@ function AboutMe() {
             Syahdan Firmansyah
           </Judul>
         </pre>
-        <pre data-prefix=">" className={`flex text-1rem`}>
-          <Text className="text-success text-1rem text-wrap">
+        <pre data-prefix=">" className="flex">
+          <Text className="text-success text-sm overflow-wrap text-wrap">
             Hallo, Saya Syahdan Firmansyah
           </Text>
         </pre>
-        <pre data-prefix=">" className={`flex text-1rem`}>
-          <Text className="text-iherit text-wrap">
+        <pre data-prefix=">" className="flex">
+          <Text className="text-inherit overflow-wrap text-wrap">
             Mahasiswa Semester 5 Prodi{" "}
             <span className="text-orange-500 font-semibold">
               Bisnis Digital FEB UNPAD.
@@ -37,8 +37,8 @@ function AboutMe() {
           </Text>
         </pre>
         <br />
-        <pre data-prefix=">" className={`flex text-1rem text-wrap`}>
-          <Text className="text-iherit break-words text-justify md:text-[0.8rem] text-wrap">
+        <pre data-prefix=">" className="flex">
+          <Text className="text-inherit overflow-wrap  text-justify text-sm text-wrap">
             Saya memiliki minat mendalam di bidang pengembangan web, khususnya{" "}
             <span className="text-orange-500">frontend development</span>{" "}
             menggunakan{" "}
