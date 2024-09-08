@@ -11,7 +11,7 @@ function AboutMe() {
   return (
     <div className="flex flex-col justify-center items-center w-full h-full md:w-10/12 md:p-2 lg:w-8/12 xl:w-1/2 relative p-8 overflow-hidden">
       <div
-        className={`mockup-code py-8 px-4 flex flex-col overflow-hidden ${
+        className={`mockup-code py-8 px-4 flex flex-col overflow-hidden w-full h-full ${
           isDarkMode
             ? "bg-[#2a323c] text-[#E6EBF0]"
             : "bg-[#E6EBF0] text-[#2c3137]"
@@ -51,6 +51,7 @@ function AboutMe() {
             web.
           </Text>
         </Pre>
+        <div className="divider divider-success w-20 self-center"></div>
       </div>
 
       <div className="flex flex-col mt-6 items-center gap-2">
