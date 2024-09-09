@@ -10,12 +10,12 @@ function Progres() {
         <h1>Masih Dalam Pengerjaan</h1>
         <span className="loading loading-dots w-4"></span>
       </div>
-
       <label className="swap swap-flip text-9xl relative flex items-center">
         <input type="checkbox" checked={isDarkMode} readOnly />
         <div className={`swap-on ${isDarkMode ? "" : "hidden"}`}>😇</div>
         <div className={`swap-off  ${isDarkMode ? "hidden" : ""}`}>😭</div>
       </label>
+      2
     </div>
   );
 }

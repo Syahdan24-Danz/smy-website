@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 import { ThemeContext } from "./themeSwitcher";
 import LogoCoding from "./logoCoding";
 import Judul from "./judul";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
   const { isDarkMode, toggleTheme } = useContext(ThemeContext);
@@ -86,8 +86,8 @@ function Logo({ isDarkMode }) {
 Logo.propTypes = {
   isDarkMode: PropTypes.bool.isRequired,
 };
-
 function NavMenu() {
+  const location = useLocation(); // Mendapatkan lokasi saat ini
   const menuList = [
     { name: "Home", link: "/" },
     { name: "Project", link: "/Project" },
@@ -98,7 +98,16 @@ function NavMenu() {
     <ul className="flex flex-col md:flex-row gap-8 md:gap-8">
       {menuList.map((item) => (
         <li key={item.name}>
-          <Link to={item.link}>{item.name}</Link>
+          <Link
+            to={item.link}
+            className={`px-4 py-2 rounded ${
+              location.pathname === item.link
+                ? "bg-[#06b6d4] text-white"
+                : "bg-transparent"
+            }`}
+          >
+            {item.name}
+          </Link>
         </li>
       ))}
     </ul>
